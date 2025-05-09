@@ -32,16 +32,24 @@ namespace Cadastro
     class Alimento
     {
         public string nome;
-        public int porcao, kcal, resultado;
+        public int resultado;
 
-        public int Calorias(int porcao, int kcal)
+        public int Calorias(string nome, int porcao, int kcal)
         {
             return porcao * kcal;
-
+            
+        }
+        public string Calorias(string nome)
+        {
+            return nome;
+        }
+        public string Calorias(string nome, int porcao)
+        {
+            return nome + " " + porcao; 
         }
         public void Falar()
         {
-            Console.WriteLine("O resultado da multiplicação é " + resultado);
+            Console.WriteLine("O " + nome + " contém " + resultado + " de calorias!");
         }
     }
 }
