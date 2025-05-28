@@ -34,4 +34,5 @@ namespace Pratica7_Lista2
             labelContador.Text = "0";
         }
     }
+
 }
