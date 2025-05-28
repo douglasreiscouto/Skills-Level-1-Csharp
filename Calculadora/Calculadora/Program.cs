@@ -1,17 +1,27 @@
-namespace Calculadora
+﻿internal class Program
 {
-    internal static class Program
+    private static void Main(string[] args)
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main()
-        {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            Application.Run(new FormCalculadora());
-        }
+        int iOpeMenu;
+        float fValorUm, fValorDois, fResultado;
+
+        Console.WriteLine("****MENU DE OPERAÇÕES****");
+        Console.WriteLine("1 - Soma");
+        Console.WriteLine("2 - Subtrair");
+        Console.WriteLine("3 - Multiplicação");
+        Console.WriteLine("4 - Divisão");
+        Console.WriteLine("0 - Sair");
+        Console.WriteLine();
+        Console.WriteLine();
+        Console.Write("Digite o número da operação desejada: ");
+        iOpeMenu = int.Parse(Console.ReadLine());
+
+        //Console.WriteLine("Digite o Primeiro Valor: ");
+        //fValorUm = float.Parse(Console.ReadLine());
+
+        //Console.WriteLine("Digite o Segundo Valor: ");
+        //fValorDois = float.Parse(Console.ReadLine());
+
+
     }
 }
