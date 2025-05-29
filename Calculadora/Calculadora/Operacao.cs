@@ -1,24 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Net;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net.Http.Headers;
+using System.Collections.Generic;
 
 namespace Calculadora
 {
-    internal class Operacao
+    class Operacao
     {
+        //variaveis
         int iOpeMenu;
         float fValorUm, fValorDois, fResultado;
-        public void SolicitaValor() 
-        {
-            Console.WriteLine();
-            Console.Write("Digite o Primeiro Valor: ");
-            fValorUm = float.Parse(Console.ReadLine());
 
-            Console.Write("Digite o Segundo Valor: ");
-            fValorDois = float.Parse(Console.ReadLine());
-        }
         public void MenuCalculadora()
         {
             Console.WriteLine("****MENU DE OPERAÇÕES****");
@@ -31,51 +26,133 @@ namespace Calculadora
             Console.WriteLine();
             Console.Write("Digite o número da operação desejada: ");
             iOpeMenu = int.Parse(Console.ReadLine());
+
+            if (iOpeMenu != 0)
+            {
+                SolicitaValor(iOpeMenu);
+            }
+            else 
+            {
+                Console.WriteLine("****PRECIONE QUALQUER TECLA PARA SAIR****");
+                Console.Read();
+            }
         }
 
-        public void RetornaResultado(float fResultado, int iOpeMenu)
+        private void SolicitaValor(int iOpeMenu)
         {
+            Console.Write("Digite o primeiro valor: ");
+            fValorUm = float.Parse(Console.ReadLine());
+
+            Console.Write("Digite o segundo valor: ");
+            fValorDois = float.Parse(Console.ReadLine());
+
             if (iOpeMenu == 1)
             {
-                Console.Write("RESULTADO DA SOMA: " + fResultado);
+                Soma(fValorUm, fValorDois);
             }
             else if (iOpeMenu == 2)
             {
-                Console.Write("RESULTADO DA SUBTRAÇÃO: " + fResultado);
+                Subtrair(fValorUm, fValorDois);
             }
-            else if (iOpeMenu == 3) 
+            else if (iOpeMenu == 3)
             {
+                Multiplicacao(fValorUm, fValorDois);
+            }
+            else
+            {
+                Divisao(fValorUm, fValorDois);
+            }
+
+        }
+
+        private void RetornaResultado(float fResultado, int iOpeMenu)
+        {
+            if (iOpeMenu == 1)
+            {
+                Console.WriteLine();
+                Console.Write("RESULTADO DA SOMA: " + fResultado);
+                Console.WriteLine();
+                ChamaOutraOperacao();
+
+            }
+            else if (iOpeMenu == 2)
+            {
+                Console.WriteLine();
+                Console.WriteLine("RESULTADO DA SUBTRAÇÃO: " + fResultado);
+                Console.WriteLine();
+                ChamaOutraOperacao();
+            }
+            else if (iOpeMenu == 3)
+            {
+                Console.WriteLine();
                 Console.Write("RESULTADO DA MULTIPLICAÇÃO: " + fResultado);
+                Console.WriteLine();
+                ChamaOutraOperacao();
             }
-            else if (iOpeMenu == 4)
+            else
             {
+                Console.WriteLine();
                 Console.Write("RESULTADO DA DIVISÃO: " + fResultado);
-            }
-            else if (iOpeMenu == 0)
-            {
-                Operacao menu = new Operacao();
-                menu.MenuCalculadora();
+                Console.WriteLine();
+                ChamaOutraOperacao();
             }
         }
-        public void Soma()
+        private void Soma(float fValorUm, float fValorDois)
         {
-            Operacao soma = new Operacao();
-
             fResultado = fValorUm + fValorDois;
-            soma.RetornaResultado(fResultado, 1);
+            RetornaResultado(fResultado, 1);
 
         }
-        float Subtrair(float fValorum, float fValorDois)
+        private void Subtrair(float fValorum, float fValorDois)
         {
-            return fValorum - fValorDois;
+            fResultado = fValorum - fValorDois;
+            RetornaResultado(fResultado, 2);
         }
-        float Multiplicacao(float fValorUm, float fValorDois)
+        private void Multiplicacao(float fValorUm, float fValorDois)
         {
-            return fValorUm * fValorDois;
+            fResultado = fValorUm * fValorDois;
+            RetornaResultado(fResultado, 3);
         }
-        float Divisao(float fValorUm, float fValordois)
+        private void Divisao(float fValorUm, float fValordois)
         {
-            return fValorUm / fValordois;
+            if (fValorUm == 0 || fValordois == 0)
+            {   
+                Console.Clear();
+                Console.WriteLine("Não é possível dividir por ZERO!");
+                Console.WriteLine("****SELECIONE NOVOS VALORES****");
+                Console.WriteLine();
+                SolicitaValor(4);
+            }
+            else
+            {
+                fResultado =  fValorUm / fValordois;
+                RetornaResultado(fResultado, 4);
+            }
+        }
+        
+        private void ChamaOutraOperacao()
+        {
+            int iChamaOutraOp;
+
+            Console.WriteLine();
+            Console.WriteLine("Deseja fazer outro operação?");
+            Console.WriteLine("1 - SIM");
+            Console.WriteLine("2 - NÃO");
+            Console.Write("--> ");
+            iChamaOutraOp = int.Parse(Console.ReadLine());
+
+            if (iChamaOutraOp == 1)
+            {
+                Console.Clear();
+                MenuCalculadora();
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("****PRECIONE QUALQUER TECLA PARA SAIR****");
+                Console.Read();
+
+            }
         }
 
     }
