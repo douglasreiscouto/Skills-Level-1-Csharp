@@ -35,6 +35,9 @@
             labelRetorno = new Label();
             buttonLimpa = new Button();
             labelContador = new Label();
+            numericUpDownLevel = new NumericUpDown();
+            labelLevel = new Label();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownLevel).BeginInit();
             SuspendLayout();
             // 
             // labelTitulo
@@ -58,20 +61,20 @@
             // 
             // buttonAdicionar
             // 
-            buttonAdicionar.Location = new Point(88, 120);
+            buttonAdicionar.Location = new Point(102, 136);
             buttonAdicionar.Name = "buttonAdicionar";
             buttonAdicionar.Size = new Size(94, 29);
-            buttonAdicionar.TabIndex = 2;
+            buttonAdicionar.TabIndex = 3;
             buttonAdicionar.Text = "Adicionar";
             buttonAdicionar.UseVisualStyleBackColor = true;
             buttonAdicionar.Click += buttonAdicionar_Click;
             // 
             // buttonImprimir
             // 
-            buttonImprimir.Location = new Point(264, 120);
+            buttonImprimir.Location = new Point(244, 136);
             buttonImprimir.Name = "buttonImprimir";
             buttonImprimir.Size = new Size(94, 29);
-            buttonImprimir.TabIndex = 3;
+            buttonImprimir.TabIndex = 4;
             buttonImprimir.Text = "Imprimir";
             buttonImprimir.UseVisualStyleBackColor = true;
             buttonImprimir.Click += buttonImprimir_Click;
@@ -87,7 +90,7 @@
             // 
             // buttonLimpa
             // 
-            buttonLimpa.Location = new Point(444, 120);
+            buttonLimpa.Location = new Point(389, 136);
             buttonLimpa.Name = "buttonLimpa";
             buttonLimpa.Size = new Size(94, 29);
             buttonLimpa.TabIndex = 5;
@@ -105,11 +108,32 @@
             labelContador.TabIndex = 6;
             labelContador.Text = "0";
             // 
+            // numericUpDownLevel
+            // 
+            numericUpDownLevel.Location = new Point(88, 19);
+            numericUpDownLevel.Name = "numericUpDownLevel";
+            numericUpDownLevel.Size = new Size(150, 27);
+            numericUpDownLevel.TabIndex = 2;
+            numericUpDownLevel.Value = new decimal(new int[] { 10, 0, 0, 0 });
+            // 
+            // labelLevel
+            // 
+            labelLevel.AutoSize = true;
+            labelLevel.Font = new Font("Segoe UI", 12F);
+            labelLevel.Location = new Point(12, 19);
+            labelLevel.Name = "labelLevel";
+            labelLevel.RightToLeft = RightToLeft.No;
+            labelLevel.Size = new Size(60, 28);
+            labelLevel.TabIndex = 8;
+            labelLevel.Text = "Level:";
+            // 
             // FormList
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(550, 161);
+            ClientSize = new Size(550, 174);
+            Controls.Add(labelLevel);
+            Controls.Add(numericUpDownLevel);
             Controls.Add(labelContador);
             Controls.Add(buttonLimpa);
             Controls.Add(labelRetorno);
@@ -118,7 +142,8 @@
             Controls.Add(textBoxNome);
             Controls.Add(labelTitulo);
             Name = "FormList";
-            Text = "Adicionar Pessoas";
+            Text = "Adicionar Personagens";
+            ((System.ComponentModel.ISupportInitialize)numericUpDownLevel).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -132,5 +157,7 @@
         private Label labelRetorno;
         private Button buttonLimpa;
         private Label labelContador;
+        private NumericUpDown numericUpDownLevel;
+        private Label labelLevel;
     }
 }
