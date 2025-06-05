@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormList));
             labelTitulo = new Label();
             textBoxNome = new TextBox();
             buttonAdicionar = new Button();
@@ -37,101 +38,119 @@
             labelContador = new Label();
             numericUpDownLevel = new NumericUpDown();
             labelLevel = new Label();
+            labelQtdPersonagem = new Label();
+            groupBoxResultado = new GroupBox();
+            numericUpDownLevelResultado = new NumericUpDown();
+            buttonPesquisar = new Button();
+            labelLevelResultado = new Label();
+            labelNomeResultado = new Label();
+            textBoxNomeResultado = new TextBox();
             ((System.ComponentModel.ISupportInitialize)numericUpDownLevel).BeginInit();
+            groupBoxResultado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownLevelResultado).BeginInit();
             SuspendLayout();
             // 
             // labelTitulo
             // 
-            labelTitulo.AutoSize = true;
-            labelTitulo.Font = new Font("Segoe UI", 12F);
-            labelTitulo.Location = new Point(12, 47);
+            resources.ApplyResources(labelTitulo, "labelTitulo");
             labelTitulo.Name = "labelTitulo";
-            labelTitulo.RightToLeft = RightToLeft.No;
-            labelTitulo.Size = new Size(70, 28);
-            labelTitulo.TabIndex = 0;
-            labelTitulo.Text = "Nome:";
             // 
             // textBoxNome
             // 
-            textBoxNome.Location = new Point(88, 51);
+            resources.ApplyResources(textBoxNome, "textBoxNome");
             textBoxNome.Name = "textBoxNome";
-            textBoxNome.Size = new Size(450, 27);
-            textBoxNome.TabIndex = 1;
-            textBoxNome.TextAlign = HorizontalAlignment.Center;
             // 
             // buttonAdicionar
             // 
-            buttonAdicionar.Location = new Point(102, 136);
+            resources.ApplyResources(buttonAdicionar, "buttonAdicionar");
             buttonAdicionar.Name = "buttonAdicionar";
-            buttonAdicionar.Size = new Size(94, 29);
-            buttonAdicionar.TabIndex = 3;
-            buttonAdicionar.Text = "Adicionar";
             buttonAdicionar.UseVisualStyleBackColor = true;
             buttonAdicionar.Click += buttonAdicionar_Click;
             // 
             // buttonImprimir
             // 
-            buttonImprimir.Location = new Point(244, 136);
+            resources.ApplyResources(buttonImprimir, "buttonImprimir");
             buttonImprimir.Name = "buttonImprimir";
-            buttonImprimir.Size = new Size(94, 29);
-            buttonImprimir.TabIndex = 4;
-            buttonImprimir.Text = "Imprimir";
             buttonImprimir.UseVisualStyleBackColor = true;
             buttonImprimir.Click += buttonImprimir_Click;
             // 
             // labelRetorno
             // 
-            labelRetorno.AutoSize = true;
-            labelRetorno.Font = new Font("Segoe UI", 10F);
-            labelRetorno.Location = new Point(88, 81);
+            resources.ApplyResources(labelRetorno, "labelRetorno");
             labelRetorno.Name = "labelRetorno";
-            labelRetorno.Size = new Size(0, 23);
-            labelRetorno.TabIndex = 4;
             // 
             // buttonLimpa
             // 
-            buttonLimpa.Location = new Point(389, 136);
+            resources.ApplyResources(buttonLimpa, "buttonLimpa");
             buttonLimpa.Name = "buttonLimpa";
-            buttonLimpa.Size = new Size(94, 29);
-            buttonLimpa.TabIndex = 5;
-            buttonLimpa.Text = "Limpar";
             buttonLimpa.UseVisualStyleBackColor = true;
             buttonLimpa.Click += buttonLimpa_Click;
             // 
             // labelContador
             // 
-            labelContador.AutoSize = true;
-            labelContador.Font = new Font("Segoe UI", 12F);
-            labelContador.Location = new Point(515, 81);
+            resources.ApplyResources(labelContador, "labelContador");
             labelContador.Name = "labelContador";
-            labelContador.Size = new Size(23, 28);
-            labelContador.TabIndex = 6;
-            labelContador.Text = "0";
             // 
             // numericUpDownLevel
             // 
-            numericUpDownLevel.Location = new Point(88, 19);
+            resources.ApplyResources(numericUpDownLevel, "numericUpDownLevel");
             numericUpDownLevel.Name = "numericUpDownLevel";
-            numericUpDownLevel.Size = new Size(150, 27);
-            numericUpDownLevel.TabIndex = 2;
             numericUpDownLevel.Value = new decimal(new int[] { 10, 0, 0, 0 });
             // 
             // labelLevel
             // 
-            labelLevel.AutoSize = true;
-            labelLevel.Font = new Font("Segoe UI", 12F);
-            labelLevel.Location = new Point(12, 19);
+            resources.ApplyResources(labelLevel, "labelLevel");
             labelLevel.Name = "labelLevel";
-            labelLevel.RightToLeft = RightToLeft.No;
-            labelLevel.Size = new Size(60, 28);
-            labelLevel.TabIndex = 8;
-            labelLevel.Text = "Level:";
+            // 
+            // labelQtdPersonagem
+            // 
+            resources.ApplyResources(labelQtdPersonagem, "labelQtdPersonagem");
+            labelQtdPersonagem.Name = "labelQtdPersonagem";
+            // 
+            // groupBoxResultado
+            // 
+            groupBoxResultado.Controls.Add(numericUpDownLevelResultado);
+            groupBoxResultado.Controls.Add(buttonPesquisar);
+            groupBoxResultado.Controls.Add(labelLevelResultado);
+            groupBoxResultado.Controls.Add(labelNomeResultado);
+            groupBoxResultado.Controls.Add(textBoxNomeResultado);
+            resources.ApplyResources(groupBoxResultado, "groupBoxResultado");
+            groupBoxResultado.Name = "groupBoxResultado";
+            groupBoxResultado.TabStop = false;
+            // 
+            // numericUpDownLevelResultado
+            // 
+            resources.ApplyResources(numericUpDownLevelResultado, "numericUpDownLevelResultado");
+            numericUpDownLevelResultado.Name = "numericUpDownLevelResultado";
+            numericUpDownLevelResultado.Value = new decimal(new int[] { 10, 0, 0, 0 });
+            // 
+            // buttonPesquisar
+            // 
+            resources.ApplyResources(buttonPesquisar, "buttonPesquisar");
+            buttonPesquisar.Name = "buttonPesquisar";
+            buttonPesquisar.UseVisualStyleBackColor = true;
+            // 
+            // labelLevelResultado
+            // 
+            resources.ApplyResources(labelLevelResultado, "labelLevelResultado");
+            labelLevelResultado.Name = "labelLevelResultado";
+            // 
+            // labelNomeResultado
+            // 
+            resources.ApplyResources(labelNomeResultado, "labelNomeResultado");
+            labelNomeResultado.Name = "labelNomeResultado";
+            // 
+            // textBoxNomeResultado
+            // 
+            resources.ApplyResources(textBoxNomeResultado, "textBoxNomeResultado");
+            textBoxNomeResultado.Name = "textBoxNomeResultado";
             // 
             // FormList
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(550, 174);
+            Controls.Add(groupBoxResultado);
+            Controls.Add(labelQtdPersonagem);
             Controls.Add(labelLevel);
             Controls.Add(numericUpDownLevel);
             Controls.Add(labelContador);
@@ -142,8 +161,10 @@
             Controls.Add(textBoxNome);
             Controls.Add(labelTitulo);
             Name = "FormList";
-            Text = "Adicionar Personagens";
             ((System.ComponentModel.ISupportInitialize)numericUpDownLevel).EndInit();
+            groupBoxResultado.ResumeLayout(false);
+            groupBoxResultado.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownLevelResultado).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -159,5 +180,12 @@
         private Label labelContador;
         private NumericUpDown numericUpDownLevel;
         private Label labelLevel;
+        private Label labelQtdPersonagem;
+        private GroupBox groupBoxResultado;
+        private Button buttonPesquisar;
+        private Label labelLevelResultado;
+        private Label labelNomeResultado;
+        private TextBox textBoxNomeResultado;
+        private NumericUpDown numericUpDownLevelResultado;
     }
 }
