@@ -53,7 +53,6 @@ namespace Pratica7_Lista2
 
         }
     }
-
     public class Personagem
     {
         public string sNomeobj;

@@ -1,17 +1,13 @@
-namespace Calculadora
+﻿using Calculadora;
+
+internal class Program
 {
-    internal static class Program
+    private static void Main(string[] args)
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main()
-        {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            Application.Run(new FormCalculadora());
-        }
+        int iOpeMenu; 
+
+        Operacao operacao = new Operacao();
+        operacao.MenuCalculadora();
+        operacao.SolicitaValor();
     }
 }
