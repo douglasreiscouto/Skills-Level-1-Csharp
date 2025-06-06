@@ -129,6 +129,7 @@
             resources.ApplyResources(buttonPesquisar, "buttonPesquisar");
             buttonPesquisar.Name = "buttonPesquisar";
             buttonPesquisar.UseVisualStyleBackColor = true;
+            buttonPesquisar.Click += buttonPesquisar_Click;
             // 
             // labelLevelResultado
             // 
