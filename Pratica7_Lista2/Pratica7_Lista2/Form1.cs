@@ -32,15 +32,15 @@ namespace Pratica7_Lista2
         {
             listaPersonagem.Clear();
 
-            labelRetorno.Text = "Lista apagada!";
+            labelRetorno.Text = "Lista Apagada!";
             labelContador.Text = "0";
         }
 
         private void buttonPesquisar_Click(object sender, EventArgs e)
         {
-            bool bAchouPersonagem; 
+            bool bAchouPersonagem;
 
-            Personagem pesquisa = new Personagem(textBoxNomeResultado.Text, (int) numericUpDownLevelResultado.Value);
+            Personagem pesquisa = new Personagem(textBoxNomeResultado.Text, (int)numericUpDownLevelResultado.Value);
             bAchouPersonagem = listaPersonagem.Any(b => b.sNomeobj == pesquisa.sNomeobj && b.iLevelobj == pesquisa.iLevelobj);
             if (bAchouPersonagem == true)
             {
@@ -51,6 +51,19 @@ namespace Pratica7_Lista2
                 MessageBox.Show("O personagem não foi cadastrado");
             }
 
+        }
+
+        private void buttonApagar_Click(object sender, EventArgs e)
+        {
+            int contador;
+
+            Personagem remover = new Personagem(textBoxNomeResultado.Text, (int)numericUpDownLevelResultado.Value);
+            listaPersonagem.Remove(remover);
+            listaPersonagem.Count();
+
+            //contador = int.Parse(labelContador.Text);
+            //contador--;
+            //labelContador.Text = contador.ToString();
         }
     }
     public class Personagem
