@@ -125,7 +125,7 @@
             numericUpDownLevel.Name = "numericUpDownLevel";
             numericUpDownLevel.Size = new Size(181, 27);
             numericUpDownLevel.TabIndex = 2;
-            numericUpDownLevel.Value = new decimal(new int[] { 10, 0, 0, 0 });
+            numericUpDownLevel.Value = new decimal(new int[] { 5, 0, 0, 0 });
             // 
             // labelLevel
             // 
@@ -181,7 +181,7 @@
             numericUpDownLevelResultado.Name = "numericUpDownLevelResultado";
             numericUpDownLevelResultado.Size = new Size(181, 27);
             numericUpDownLevelResultado.TabIndex = 12;
-            numericUpDownLevelResultado.Value = new decimal(new int[] { 10, 0, 0, 0 });
+            numericUpDownLevelResultado.Value = new decimal(new int[] { 5, 0, 0, 0 });
             // 
             // buttonPesquisar
             // 
