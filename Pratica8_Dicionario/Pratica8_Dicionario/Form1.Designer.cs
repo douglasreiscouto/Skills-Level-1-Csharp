@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             groupBoxCadastro = new GroupBox();
+            buttonExcluir = new Button();
+            buttonCadastrar = new Button();
+            labelCadastroDescricao = new Label();
+            textBoxCadastroDescricao = new TextBox();
             textBoxCadastroNick = new TextBox();
             labelCadastroNick = new Label();
-            textBoxCadastroDescricao = new TextBox();
-            labelCadastroDescricao = new Label();
-            buttonCadastrar = new Button();
-            buttonExcluir = new Button();
             groupBoxPesquisar = new GroupBox();
-            textBoxPesquisaNick = new TextBox();
-            label1 = new Label();
-            labelPesquisaDescrica = new Label();
             buttonPesquisar = new Button();
+            labelPesquisaDescricao = new Label();
+            label1 = new Label();
+            textBoxPesquisaNick = new TextBox();
             labelStatus = new Label();
             labelDescricaoStatus = new Label();
             groupBoxCadastro.SuspendLayout();
@@ -61,6 +61,41 @@
             groupBoxCadastro.TabStop = false;
             groupBoxCadastro.Text = "Cadastro";
             // 
+            // buttonExcluir
+            // 
+            buttonExcluir.Location = new Point(6, 121);
+            buttonExcluir.Name = "buttonExcluir";
+            buttonExcluir.Size = new Size(94, 29);
+            buttonExcluir.TabIndex = 4;
+            buttonExcluir.Text = "Excluir";
+            buttonExcluir.UseVisualStyleBackColor = true;
+            // 
+            // buttonCadastrar
+            // 
+            buttonCadastrar.Location = new Point(301, 121);
+            buttonCadastrar.Name = "buttonCadastrar";
+            buttonCadastrar.Size = new Size(94, 29);
+            buttonCadastrar.TabIndex = 3;
+            buttonCadastrar.Text = "Cadastrar";
+            buttonCadastrar.UseVisualStyleBackColor = true;
+            buttonCadastrar.Click += buttonCadastrar_Click;
+            // 
+            // labelCadastroDescricao
+            // 
+            labelCadastroDescricao.AutoSize = true;
+            labelCadastroDescricao.Location = new Point(6, 76);
+            labelCadastroDescricao.Name = "labelCadastroDescricao";
+            labelCadastroDescricao.Size = new Size(77, 20);
+            labelCadastroDescricao.TabIndex = 4;
+            labelCadastroDescricao.Text = "Descrição:";
+            // 
+            // textBoxCadastroDescricao
+            // 
+            textBoxCadastroDescricao.Location = new Point(87, 73);
+            textBoxCadastroDescricao.Name = "textBoxCadastroDescricao";
+            textBoxCadastroDescricao.Size = new Size(308, 27);
+            textBoxCadastroDescricao.TabIndex = 2;
+            // 
             // textBoxCadastroNick
             // 
             textBoxCadastroNick.Location = new Point(53, 40);
@@ -78,44 +113,10 @@
             labelCadastroNick.TabIndex = 1;
             labelCadastroNick.Text = "Nick:";
             // 
-            // textBoxCadastroDescricao
-            // 
-            textBoxCadastroDescricao.Location = new Point(87, 73);
-            textBoxCadastroDescricao.Name = "textBoxCadastroDescricao";
-            textBoxCadastroDescricao.Size = new Size(308, 27);
-            textBoxCadastroDescricao.TabIndex = 2;
-            // 
-            // labelCadastroDescricao
-            // 
-            labelCadastroDescricao.AutoSize = true;
-            labelCadastroDescricao.Location = new Point(6, 76);
-            labelCadastroDescricao.Name = "labelCadastroDescricao";
-            labelCadastroDescricao.Size = new Size(77, 20);
-            labelCadastroDescricao.TabIndex = 4;
-            labelCadastroDescricao.Text = "Descrição:";
-            // 
-            // buttonCadastrar
-            // 
-            buttonCadastrar.Location = new Point(301, 121);
-            buttonCadastrar.Name = "buttonCadastrar";
-            buttonCadastrar.Size = new Size(94, 29);
-            buttonCadastrar.TabIndex = 3;
-            buttonCadastrar.Text = "Cadastrar";
-            buttonCadastrar.UseVisualStyleBackColor = true;
-            // 
-            // buttonExcluir
-            // 
-            buttonExcluir.Location = new Point(6, 121);
-            buttonExcluir.Name = "buttonExcluir";
-            buttonExcluir.Size = new Size(94, 29);
-            buttonExcluir.TabIndex = 4;
-            buttonExcluir.Text = "Excluir";
-            buttonExcluir.UseVisualStyleBackColor = true;
-            // 
             // groupBoxPesquisar
             // 
             groupBoxPesquisar.Controls.Add(buttonPesquisar);
-            groupBoxPesquisar.Controls.Add(labelPesquisaDescrica);
+            groupBoxPesquisar.Controls.Add(labelPesquisaDescricao);
             groupBoxPesquisar.Controls.Add(label1);
             groupBoxPesquisar.Controls.Add(textBoxPesquisaNick);
             groupBoxPesquisar.Location = new Point(429, 21);
@@ -125,13 +126,24 @@
             groupBoxPesquisar.TabStop = false;
             groupBoxPesquisar.Text = "Pesquisar";
             // 
-            // textBoxPesquisaNick
+            // buttonPesquisar
             // 
-            textBoxPesquisaNick.Location = new Point(54, 26);
-            textBoxPesquisaNick.Name = "textBoxPesquisaNick";
-            textBoxPesquisaNick.Size = new Size(342, 27);
-            textBoxPesquisaNick.TabIndex = 5;
-            textBoxPesquisaNick.TextAlign = HorizontalAlignment.Center;
+            buttonPesquisar.Location = new Point(301, 121);
+            buttonPesquisar.Name = "buttonPesquisar";
+            buttonPesquisar.Size = new Size(94, 29);
+            buttonPesquisar.TabIndex = 6;
+            buttonPesquisar.Text = "Pesquisa";
+            buttonPesquisar.UseVisualStyleBackColor = true;
+            // 
+            // labelPesquisaDescricao
+            // 
+            labelPesquisaDescricao.AutoSize = true;
+            labelPesquisaDescricao.Location = new Point(54, 80);
+            labelPesquisaDescricao.Name = "labelPesquisaDescricao";
+            labelPesquisaDescricao.Size = new Size(163, 20);
+            labelPesquisaDescricao.TabIndex = 8;
+            labelPesquisaDescricao.Text = "labelPesquisaDescricao";
+            labelPesquisaDescricao.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label1
             // 
@@ -142,24 +154,13 @@
             label1.TabIndex = 7;
             label1.Text = "Nick:";
             // 
-            // labelPesquisaDescrica
+            // textBoxPesquisaNick
             // 
-            labelPesquisaDescrica.AutoSize = true;
-            labelPesquisaDescrica.Location = new Point(54, 80);
-            labelPesquisaDescrica.Name = "labelPesquisaDescrica";
-            labelPesquisaDescrica.Size = new Size(107, 20);
-            labelPesquisaDescrica.TabIndex = 8;
-            labelPesquisaDescrica.Text = "labelDescricao";
-            labelPesquisaDescrica.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // buttonPesquisar
-            // 
-            buttonPesquisar.Location = new Point(301, 121);
-            buttonPesquisar.Name = "buttonPesquisar";
-            buttonPesquisar.Size = new Size(94, 29);
-            buttonPesquisar.TabIndex = 6;
-            buttonPesquisar.Text = "Pesquisa";
-            buttonPesquisar.UseVisualStyleBackColor = true;
+            textBoxPesquisaNick.Location = new Point(54, 26);
+            textBoxPesquisaNick.Name = "textBoxPesquisaNick";
+            textBoxPesquisaNick.Size = new Size(342, 27);
+            textBoxPesquisaNick.TabIndex = 5;
+            textBoxPesquisaNick.TextAlign = HorizontalAlignment.Center;
             // 
             // labelStatus
             // 
@@ -210,7 +211,7 @@
         private GroupBox groupBoxPesquisar;
         private Label label1;
         private TextBox textBoxPesquisaNick;
-        private Label labelPesquisaDescrica;
+        private Label labelPesquisaDescricao;
         private Button buttonPesquisar;
         private Label labelStatus;
         private Label labelDescricaoStatus;
