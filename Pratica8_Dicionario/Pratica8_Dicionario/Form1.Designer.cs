@@ -66,9 +66,10 @@
             buttonExcluir.Location = new Point(6, 121);
             buttonExcluir.Name = "buttonExcluir";
             buttonExcluir.Size = new Size(94, 29);
-            buttonExcluir.TabIndex = 4;
+            buttonExcluir.TabIndex = 5;
             buttonExcluir.Text = "Excluir";
             buttonExcluir.UseVisualStyleBackColor = true;
+            buttonExcluir.Click += buttonExcluir_Click;
             // 
             // buttonCadastrar
             // 
@@ -134,6 +135,7 @@
             buttonPesquisar.TabIndex = 6;
             buttonPesquisar.Text = "Pesquisa";
             buttonPesquisar.UseVisualStyleBackColor = true;
+            buttonPesquisar.Click += buttonPesquisar_Click;
             // 
             // labelPesquisaDescricao
             // 
@@ -204,7 +206,6 @@
         private GroupBox groupBoxCadastro;
         private TextBox textBoxCadastroNick;
         private Label labelCadastroNick;
-        private Button buttonExcluir;
         private Button buttonCadastrar;
         private Label labelCadastroDescricao;
         private TextBox textBoxCadastroDescricao;
@@ -215,5 +216,6 @@
         private Button buttonPesquisar;
         private Label labelStatus;
         private Label labelDescricaoStatus;
+        private Button buttonExcluir;
     }
 }
