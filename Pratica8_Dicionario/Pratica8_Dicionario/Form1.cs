@@ -1,3 +1,5 @@
+using System.Diagnostics.SymbolStore;
+
 namespace Pratica8_Dicionario
 {
     public partial class FormDicionario : Form
@@ -59,18 +61,28 @@ namespace Pratica8_Dicionario
         {
             bool bContemPersonagem;
 
-
             bContemPersonagem = personagem.ContainsKey(textBoxPesquisaNick.Text);
 
             if (bContemPersonagem == true)
             {
-                labelDescricaoStatus.Text = "Pesquisa realizada com sucesso.";
-                //labelPesquisaDescricao.Text = personagem.[];
+                labelPesquisaDescricao.Text = personagem[textBoxPesquisaNick.Text];
 
+                labelDescricaoStatus.Text = "Pesquisa realizada com sucesso.";
             }
             else
             {
-                MessageBox.Show("O personagem informado não foi cadastrado.\nDeseja cadastra-lo?", "ATENÇÃO", MessageBoxButtons.YesNo);
+                DialogResult resultado = MessageBox.Show("O personagem informado não foi encotrado.\nDeseja cadastra-lo?", "ATENÇÃO", MessageBoxButtons.YesNo);
+                labelDescricaoStatus.Text = "O personagem informado não foi encontrado.";
+
+                if (resultado == DialogResult.Yes)
+                {
+                    textBoxCadastroNick.Text = textBoxPesquisaNick.Text;
+                }
+                else
+                {
+                    MessageBox.Show("Ok, retorne a tela primcipal", "ATENÇÃO", MessageBoxButtons.OK);
+                    labelDescricaoStatus.Text = "Aguardando cadastro...";
+                }
             }
         }
     }
