@@ -42,6 +42,8 @@
             textBoxPesquisaNick = new TextBox();
             labelStatus = new Label();
             labelDescricaoStatus = new Label();
+            labelContadorCadastros = new Label();
+            labelQuatidadeCadastro = new Label();
             groupBoxCadastro.SuspendLayout();
             groupBoxPesquisar.SuspendLayout();
             SuspendLayout();
@@ -182,11 +184,31 @@
             labelDescricaoStatus.TabIndex = 3;
             labelDescricaoStatus.Text = "labelDescricaoStatus";
             // 
+            // labelContadorCadastros
+            // 
+            labelContadorCadastros.AutoSize = true;
+            labelContadorCadastros.Location = new Point(623, 201);
+            labelContadorCadastros.Name = "labelContadorCadastros";
+            labelContadorCadastros.Size = new Size(162, 20);
+            labelContadorCadastros.TabIndex = 4;
+            labelContadorCadastros.Text = "Contador de cadastros:";
+            // 
+            // labelQuatidadeCadastro
+            // 
+            labelQuatidadeCadastro.AutoSize = true;
+            labelQuatidadeCadastro.Location = new Point(791, 201);
+            labelQuatidadeCadastro.Name = "labelQuatidadeCadastro";
+            labelQuatidadeCadastro.Size = new Size(17, 20);
+            labelQuatidadeCadastro.TabIndex = 5;
+            labelQuatidadeCadastro.Text = "0";
+            // 
             // FormDicionario
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(838, 230);
+            Controls.Add(labelQuatidadeCadastro);
+            Controls.Add(labelContadorCadastros);
             Controls.Add(labelDescricaoStatus);
             Controls.Add(labelStatus);
             Controls.Add(groupBoxPesquisar);
@@ -217,5 +239,7 @@
         private Label labelStatus;
         private Label labelDescricaoStatus;
         private Button buttonExcluir;
+        private Label labelContadorCadastros;
+        private Label labelQuatidadeCadastro;
     }
 }

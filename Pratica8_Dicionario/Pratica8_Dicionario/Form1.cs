@@ -12,8 +12,10 @@ namespace Pratica8_Dicionario
 
             personagem = new Dictionary<string, string>();
 
-            labelDescricaoStatus.Text = "Aguardando inicio...";
             labelPesquisaDescricao.Text = "";
+            labelQuatidadeCadastro.Text = "";
+            labelDescricaoStatus.Text = "Aguardando inicio...";
+            labelQuatidadeCadastro.Text = personagem.Count.ToString();
         }
 
         private void buttonCadastrar_Click(object sender, EventArgs e)
@@ -26,28 +28,40 @@ namespace Pratica8_Dicionario
             {
                 labelDescricaoStatus.Text = "O personagem informando já foi cadastrado.";
 
-                textBoxPesquisaNick = textBoxCadastroNick;
+                textBoxPesquisaNick.Text = textBoxCadastroNick.Text;
             }
             else
             {
-                personagem.Add(textBoxCadastroNick.Text, textBoxCadastroDescricao.Text);
-                labelDescricaoStatus.Text = "Personagem " + textBoxCadastroNick.Text + " foi cadastrado com sucesso.";
+                if (textBoxCadastroNick.Text == null || textBoxCadastroNick.Text == "")
+                {
+                    MessageBox.Show("Não é possível cadastra um personagem com nick em branco.", "ATENÇÃO", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    personagem.Add(textBoxCadastroNick.Text, textBoxCadastroDescricao.Text);
+                    labelDescricaoStatus.Text = "Personagem " + textBoxCadastroNick.Text + " foi cadastrado com sucesso.";
 
-                textBoxCadastroNick.Text = "";
-                textBoxCadastroDescricao.Text = "";
+                    textBoxCadastroNick.Text = "";
+                    textBoxCadastroDescricao.Text = "";
+                    labelQuatidadeCadastro.Text = personagem.Count.ToString();
+                }
             }
-
         }
 
         private void buttonExcluir_Click(object sender, EventArgs e)
         {
             bool bContemPersonagem;
+            int iQuantidadeCadastro;
 
             bContemPersonagem = personagem.ContainsKey(textBoxCadastroNick.Text);
 
             if (bContemPersonagem == true)
             {
+                iQuantidadeCadastro = personagem.Count();
+                iQuantidadeCadastro--;
                 personagem.Remove(textBoxCadastroNick.Text);
+
+                labelQuatidadeCadastro.Text = iQuantidadeCadastro.ToString();
 
                 labelDescricaoStatus.Text = "Personagem removido com sucesso.";
             }
